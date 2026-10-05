@@ -3,6 +3,7 @@
  */
 
 export * from './app-config';
+export * from './error-tracking';
 export * from './core.module';
 export * from './services';
 export * from './utils';

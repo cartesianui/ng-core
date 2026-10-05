@@ -68,6 +68,29 @@ export class AppConfig {
    */
   static captcha: { siteKey: string } = { siteKey: '' };
 
+  /**
+   * Error tracking (GlitchTip, over Sentry's protocol).
+   *
+   * The DSN IS PUBLIC BY CONSTRUCTION — it ships inside this bundle, so every
+   * visitor has it. That is Sentry's own model: a DSN can only SEND events, not
+   * read them. It still points at a guarded hostname where exactly one path
+   * (`POST /api/<id>/envelope/`) is reachable and everything else is refused,
+   * because the alternative is an open door to the admin API next to it.
+   *
+   * ONE DSN PER APP, because each app is released on its own tag and has its own
+   * project — a POS error in the admin issue list makes "did this release
+   * regress" unanswerable for either.
+   *
+   * Empty disables the SDK entirely, which is right for local work and for any
+   * install without error tracking: no DSN, no events, no failed attempts to
+   * send them.
+   */
+  static sentry: { dsn: string; tracesSampleRate: number; environment: string } = {
+    dsn: '',
+    tracesSampleRate: 0,
+    environment: ''
+  };
+
   static appBaseUrl = '';
 
   static appBaseHref = ''; // returns angular's base-href parameter value if used during the publish
