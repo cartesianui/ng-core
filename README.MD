@@ -1,4 +1,4 @@
-# @cartesianui/core
+# @cartesianui/platform-core
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.8.
 
@@ -43,7 +43,7 @@ Issues of this repository are tracked on https://github.com/cartesianui/back-off
 To install this library, run:
 
 ```bash
-$ npm i @cartesianui/core --save
+$ npm i @cartesianui/platform-core --save
 ```
 
 ## CartesianHttpInterceptor
@@ -51,7 +51,7 @@ $ npm i @cartesianui/core --save
 In order to use CartesianHttpInterceptor, first import it into module like below;
 
 ```ts
-import { CartesianHttpInterceptor } from '@cartesianui/core';
+import { CartesianHttpInterceptor } from '@cartesianui/platform-core';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 ```
 
@@ -72,7 +72,7 @@ providers: [
 Import any other service e.g. TenancyService
 
 ```ts
-import { TenancyService } from '@cartesianui/core';
+import { TenancyService } from '@cartesianui/platform-core';
 ```
 
 ## License
